@@ -43,9 +43,9 @@ Aplicar conceitos fundamentais da programação orientada a objetos em Java. Est
 - **ArrayList:** Utilizado `ArrayList<Animal>` para armazenar e manipular grupos de objetos `Animal`.
 
 ### Manipulação de Arquivos
-
-- **Não Implementado:** O projeto não inclui funcionalidades para salvar ou carregar dados de arquivos.
+- **Salvar Animais:** Utiliza `BufferedWriter` para salvar os dados dos animais em um arquivo de texto.
+- **Carregar Animais:** Utiliza `BufferedReader` para ler os dados dos animais de um arquivo de texto.
 
 ### Exceções
+- Tratamento de Exceções: Verificação básica de entradas inválidas e tratamento de erros de I/O durante a leitura e escrita de arquivos.
 
-- **Tratamento de Exceções:** Verificação básica de entradas inválidas com tratamento para entradas não numéricas no menu. -- to do

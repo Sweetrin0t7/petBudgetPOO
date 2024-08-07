@@ -28,12 +28,24 @@ public abstract class Animal implements Contrato{
         this.emRacaoKg = emRacaoKg;
     }
 
+    public Animal(String nome, float peso, char ehObeso, int emRacaoKg) {
+        this.nome = nome;
+        this.peso = peso;
+        this.ehObeso = ehObeso;
+        this.emRacaoKg = emRacaoKg;
+    }
+
 
     public abstract double calcularNecessidadeEnergeticaCrescimento(double NecessidadeEnergetica, float Peso, float PesoEstimado);
 
-    public float calcularQuantidadeComidaGramasDia(double necessidadeEnergetica) {
+    public float calcularQuantidadeComidaGramasDia(double necessidadeEnergetica, int emRacaoKg) {
+        if (emRacaoKg <= 0) {
+            System.out.println("Valor de emRacaoKg inválido: " + emRacaoKg);
+            return 0; // Evita divisão por zero
+        }
         return (float) ((necessidadeEnergetica / emRacaoKg) * 1000);
     }
+
 
     public float calcularQuantidadeComidaGramasMes(float quantidadeComidaDia) {
         return quantidadeComidaDia * 30;

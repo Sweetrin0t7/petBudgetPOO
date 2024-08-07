@@ -1,0 +1,2 @@
+Cachorro,nomeCachorro,10.0,n,3500
+Gato,nomeGato,5.0,n,3500,m,s

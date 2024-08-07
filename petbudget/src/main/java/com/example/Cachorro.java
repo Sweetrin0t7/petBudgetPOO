@@ -13,6 +13,10 @@ public class Cachorro extends Animal {
         super(nome, semanasVida, peso, pesoEstimado, ehObeso, emRacaoKg);
     }
 
+    public Cachorro(String nome, float peso, char ehObeso, int emRacaoKg) {
+        super(nome, peso, ehObeso, emRacaoKg);
+    }
+
     public double calcularNecessidadeEnergeticaPdia(float peso, char ehobeso){
         if (ehobeso == 's') {
             System.out.println(" \n   É recomendável entrar em contato com um veterinario, apesar da necessidade energética aumentar a quantidade de comida, o gato está com risco de vida!\n");
@@ -33,7 +37,7 @@ public class Cachorro extends Animal {
         DecimalFormat df = new DecimalFormat("#,##0.00");
 
         double necessidadeEnergeticaDiaria = calcularNecessidadeEnergeticaPdia(getPeso(), getEhObeso());
-        float quantidadeComidaDia = calcularQuantidadeComidaGramasDia(necessidadeEnergeticaDiaria);
+        float quantidadeComidaDia = calcularQuantidadeComidaGramasDia(necessidadeEnergeticaDiaria, emRacaoKg);
         double quantidadeComidaMes = calcularQuantidadeComidaGramasMes(quantidadeComidaDia);
 
         System.out.println("\n------------------------------------------------------------------------");
@@ -51,4 +55,9 @@ public class Cachorro extends Animal {
         //EM (kcal/dia) = energia necessária para manutenção x 6,7 x [e(-0,189p) – 0,66] | exp para calcular o número de Euler (e)
         return NecessidadeEnergetica * 3.2 * (exp(-0.87 * p) - 0.1);
     };
+
+    @Override
+    public String toString() {
+        return "Cachorro," + getNome() + "," + getPeso() + "," + getEhObeso() + "," + emRacaoKg;
+    }
 }

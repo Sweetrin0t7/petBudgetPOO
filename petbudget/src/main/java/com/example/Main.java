@@ -62,11 +62,11 @@ public class Main {
                     break;
 
                 case 3:
-                    // Salvar Animais em Arquivo
+                    ArquivoUtils.salvarAnimaisEmArquivo(animais, "animais.txt");
                     break;
 
                 case 4:
-                    // Carregar Animais de Arquivo
+                    animais = ArquivoUtils.carregarAnimaisDeArquivo("animais.txt");
                     break;
 
                 case 5:

@@ -21,6 +21,12 @@ public class Gato extends Animal{
         this.sexo = sexo;
     }
 
+    public Gato(String nome, float peso, char ehObeso, char sexo, char ehCastrado, int emRacaoKg) {
+        super(nome, peso, ehObeso, emRacaoKg);
+        this.ehCastrado = ehCastrado;
+        this.sexo = sexo;
+    }
+
 
     public double calcularNecessidadeEnergeticaPdia(float peso, char ehcastrado, char ehobeso, char sexo){
         if (ehobeso == 's') {
@@ -58,7 +64,7 @@ public class Gato extends Animal{
         DecimalFormat df = new DecimalFormat("#,##0.00");
 
         double necessidadeEnergeticaDiaria = calcularNecessidadeEnergeticaPdia(getPeso(), ehCastrado, getEhObeso(), sexo);
-        float quantidadeComidaDia = calcularQuantidadeComidaGramasDia(necessidadeEnergeticaDiaria);
+        float quantidadeComidaDia = calcularQuantidadeComidaGramasDia(necessidadeEnergeticaDiaria, emRacaoKg);
         double quantidadeComidaMes = calcularQuantidadeComidaGramasMes(quantidadeComidaDia);
 
         System.out.println("\n------------------------------------------------------------------------");
@@ -84,5 +90,10 @@ public class Gato extends Animal{
 
     public void setSemanasVida(int semanasVida) {
         this.semanasVida = semanasVida;
+    }
+
+    @Override
+    public String toString() {
+        return "Gato," + getNome() + "," + getPeso() + "," + getEhObeso() + "," + emRacaoKg + "," + sexo + "," + ehCastrado;
     }
 }
